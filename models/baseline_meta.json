@@ -1,0 +1,64 @@
+{
+  "labels": [
+    "anger",
+    "fear",
+    "happy",
+    "love",
+    "sadness"
+  ],
+  "aspect_seeds": {
+    "shipping": [
+      "kurir",
+      "pengiriman",
+      "kirim",
+      "lama",
+      "cepat",
+      "estimasi",
+      "ekspedisi"
+    ],
+    "quality": [
+      "kualitas",
+      "bagus",
+      "rusak",
+      "cacat",
+      "original",
+      "ori",
+      "fungsi",
+      "awet"
+    ],
+    "packaging": [
+      "buble",
+      "bubble",
+      "packing",
+      "kemasan",
+      "rapi",
+      "dus",
+      "box",
+      "aman"
+    ],
+    "pricing": [
+      "harga",
+      "murah",
+      "mahal",
+      "terjangkau",
+      "diskon",
+      "promo",
+      "worth"
+    ],
+    "service": [
+      "penjual",
+      "seller",
+      "admin",
+      "respon",
+      "ramah",
+      "pelayanan",
+      "balas"
+    ]
+  },
+  "val_macro_f1": 0.4953,
+  "val_accuracy": 0.441,
+  "test_clean_macro_f1": 0.5976,
+  "test_noisy_macro_f1": 0.5804,
+  "seed": 42,
+  "model_type": "Subword TF-IDF + Calibrated LightGBM (5-Fold CV)"
+}

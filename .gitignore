@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.DS_Store
+
+# Data: never commit the raw dataset or the third-party slang file
+data/raw/*
+data/external/*
+!data/raw/.gitkeep
+!data/external/.gitkeep
+
+# IndoBERT weights are ~500 MB: share them through Google Drive and link it in README.md
+models/indobert/
+models/_indobert_checkpoints/
+
+models/*.model
+models/*.npy

@@ -1,0 +1,27 @@
+{
+  "raw_file_checks": {
+    "source_file": "PRDECT-ID Dataset.csv",
+    "n_rows_raw": 5400,
+    "n_fuzzy_duplicates_dropped": 154,
+    "n_exact_duplicates_dropped": 0,
+    "n_rows_final": 5246
+  },
+  "n_reviews": 5246,
+  "label_distribution_all": {
+    "counts": {
+      "anger": 673,
+      "fear": 890,
+      "happy": 1717,
+      "love": 785,
+      "sadness": 1181
+    },
+    "percent": {
+      "anger": 12.83,
+      "fear": 16.97,
+      "happy": 32.73,
+      "love": 14.96,
+      "sadness": 22.51
+    }
+  },
+  "length_words_mean": 16.22
+}

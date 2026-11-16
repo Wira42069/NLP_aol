@@ -1,0 +1,6 @@
+,Pred_anger,Pred_fear,Pred_happy,Pred_love,Pred_sadness
+True_anger,30,17,7,0,13
+True_fear,10,41,12,0,26
+True_happy,3,5,141,19,4
+True_love,1,0,34,43,1
+True_sadness,9,27,3,0,79
