@@ -11,12 +11,23 @@ from typing import Callable
 import joblib
 import numpy as np
 import pandas as pd
-
+from gensim.models import FastText
+from huggingface_hub import snapshot_download
 from numpy.linalg import norm
 
 ROOT = Path(__file__).resolve().parents[1]
 MODELS_DIR = ROOT / "models"
 
+HF_REPO = "wiratheausom/NLP_aol"
+
+
+def _fasttext_path() -> str:
+    """Use the local Text model if present, otherwise fetch it from Hugging Face."""
+    local = MODELS_DIR / "fasttext_aspects.model"
+    if local.exists():
+        return str(local)
+    folder = snapshot_download(HF_REPO, allow_patterns=["fasttext_aspects.model*"])
+    return str(Path(folder) / "fasttext_aspects.model")
 
 class ReviewPredictor:
     display_name = "Calibrated LightGBM + FastText Pipeline"
@@ -28,7 +39,7 @@ class ReviewPredictor:
         self.labels = list(self.mlb.classes_)
         
         # Load FastText & Meta
-        self.ft_model = FastText.load(str(models_dir / "fasttext_aspects.model"))
+        self.ft_model = FastText.load(_fasttext_path(), mmap="r")
         self.meta = json.loads((models_dir / "baseline_meta.json").read_text(encoding="utf-8"))
         self.aspect_seeds = self.meta["aspect_seeds"]
         

@@ -16,3 +16,4 @@ models/_indobert_checkpoints/
 
 models/*.model
 models/*.npy
+models/fasttext_aspects.model*
