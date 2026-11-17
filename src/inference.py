@@ -11,7 +11,7 @@ from typing import Callable
 import joblib
 import numpy as np
 import pandas as pd
-from gensim.models import FastText
+
 from numpy.linalg import norm
 
 ROOT = Path(__file__).resolve().parents[1]
