@@ -124,6 +124,7 @@ def render_batch_results(res: pd.DataFrame) -> None:
     n = len(res)
     # Explode multi-labels so a review tagged "happy, love" counts for both
     exploded = res.assign(emotion=res['predicted_emotions'].str.split(', ')).explode('emotion')
+    exploded = exploded.reset_index(drop=True) 
     counts = exploded["emotion"].value_counts().reindex(EMOTIONS, fill_value=0)
     
     negative_count = exploded[exploded['emotion'].isin(NEGATIVE_EMOTIONS)]['review'].nunique()
